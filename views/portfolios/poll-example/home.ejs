@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<% include ../../partials/head.ejs %>
+  	<% include ../../partials/scripts.ejs %>
+
+  </head>
+  <body>
+  	<% include ../../partials/header.ejs %>
+
+  	<main>
+      <% if(errors) { %>
+          <ul>
+            <% errors.forEach(function(error){ %>
+              <li> <%= error.msg %> </li>
+            <% }); %>
+          </ul>
+      <% } %>
+
+  		<div class="container">
+
+  			<form action="/<%= portfolioHome %>/api/create-poll" method="post">
+  				<input type="text" name="pollquestion" placeholder="Enter the question">
+
+  				<input type="text" name="polloption" placeholder="Enter a poll option">
+  				<input type="text" name="polloption" placeholder="Enter a poll option">
+  				<input type="submit" name="Submit">
+  			</form>
+  		</div>
+
+  	<main>
+
+  	<% include ../../partials/footer.ejs %>
+  </body>
+
+  
+
+</html>

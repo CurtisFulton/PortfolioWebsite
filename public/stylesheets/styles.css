@@ -1,0 +1,34 @@
+/*******************************************************************/
+/*			Styles that are generic across the whole site 		   */
+/*******************************************************************/
+
+/* Globals */
+
+.container {
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/* Fonts */
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body p {
+	font-family: 'Gentium Basic', serif;
+}
+
+
+/* Header */
+
+
+
+/* Body */
+
+
+
+/* Footer */
+footer {
+	text-align: center;
+}

@@ -1,0 +1,6 @@
+[
+	{
+		"portfolioTitle":"poll-example",
+		"customRouter":"./portfolio/poll-example.js"
+	}
+]
