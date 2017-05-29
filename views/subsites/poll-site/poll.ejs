@@ -14,11 +14,9 @@
         <h1> Poll ID: <%= poll._id %> </h1>
         <h2> Poll Question: <%= poll.question %> </h2>
 
-        <ul>
-          <% poll.pollOptions.forEach(function(option) { %>
-            <li> <%= option %> </li>
-          <% }); %>
-        </ul>
+        <% include partials/single-response-poll.ejs %>
+
+        <a href='<%= pollID %>/results'>results</a>
   		</div>
 
   	<main>

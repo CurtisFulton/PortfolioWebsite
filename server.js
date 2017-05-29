@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const validator = require('validator');
 
-const port = 4000;
+const port = 3000;
 const app = express();
 
 // View engine

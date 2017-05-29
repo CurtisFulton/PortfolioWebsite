@@ -1,24 +1,29 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
-var portfolios = require('../data/portfolios.json');
+const fs = require('fs');
 
-// Add custom routers for portfolios
-// This allows for custom logic to be run for each site
-for (var i = 0; i < portfolios.length; i++) {
-	var portfolio = portfolios[i];
+// Create all the custom routes found in the subroute directory
+const subrouteDir = path.join(__dirname, 'subroutes/');
+fs.readdir(subrouteDir, function(err, files) {
+	files.forEach(function(file) {
+		try {
+			if (path.extname(file) != '.js') {
+				console.log("File in subroutes is not .js");
+			}
 
-	//Get custom router
-	var customRouter;
-	try {
-		customRouter = require(portfolio.customRouter);
-		console.log("Using custom router for /portfolio/" + portfolio.portfolioTitle);
-		router.use("/" + portfolio.portfolioTitle, customRouter);
-	} catch (ex) {
-		console.log("Could not find router " + portfolio.customRouter);
-		console.log(ex);
-	}
-}
+			var routeName = path.basename(file, '.js'); // Remove the .js Extention
+			var customRoute = require(subrouteDir + routeName);
+			
+			router.use('/' + routeName, customRoute);
+			console.log("Created custom route for " + routeName);
+		} catch (err) {
+			console.log("This was most likely caused because there is a folder in the subroutes folder");
+			console.log(err);
+		}
+	});
+});
 
 
 // Default portfolio page

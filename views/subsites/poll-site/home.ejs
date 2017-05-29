@@ -21,18 +21,21 @@
 
   			<form action="/<%= portfolioHome %>/api/create-poll" method="post">
   				<input type="text" name="pollquestion" placeholder="Enter the question">
-
+          <br>
   				<input type="text" name="polloption" placeholder="Enter a poll option">
+          <br>
   				<input type="text" name="polloption" placeholder="Enter a poll option">
+          <br>
   				<input type="submit" name="Submit">
   			</form>
+
+        <br>
+        <a href="poll/polls">All polls</a>
   		</div>
 
   	<main>
 
   	<% include ../../partials/footer.ejs %>
   </body>
-
-  
 
 </html>
