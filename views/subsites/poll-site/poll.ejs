@@ -4,6 +4,7 @@
   	<% include ../../partials/head.ejs %>
   	<% include ../../partials/scripts.ejs %>
 
+    <script src="/javascripts/poll/submit-poll.js" async defer></script>
   </head>
   <body>
   	<% include ../../partials/header.ejs %>
@@ -13,13 +14,18 @@
 
         <h1> Poll ID: <%= poll._id %> </h1>
         <h2> Poll Question: <%= poll.question %> </h2>
-
-        <% include partials/single-response-poll.ejs %>
-
+        <% if (poll.multiSelect) { %>
+          <% include partials/multi-response-poll.ejs %>
+        <% } else { %>
+          <% include partials/single-response-poll.ejs %>
+        <% } %>
+        <br>
+        <h4>Duplication Checking: <%= duplicationCheck %></h4>
+        <br>
         <a href='<%= pollID %>/results'>results</a>
   		</div>
 
-  	<main>
+  	</main>
 
   	<% include ../../partials/footer.ejs %>
   </body>

@@ -1,12 +1,18 @@
 <header>
 	<div class="container">
-		<div class=""><span style="color:#b23000">Curtis</span> Fulton</div>
+		<div class="navbar-brand"><span class="highlight">Curtis</span> Fulton</div>
 
 		<nav>
 			<ul>
-				<li><a href="/" class="">Home</a></li>
-				<li><a href="/portfolio" class="">Portfolio</a></li>
-				<li><a href="/aboutme" class="">About Me</a></li>
+				<li class="<% if (locals.activePage && activePage == "Home") { %> highlight <% } %>">
+					<a href="/" class="">Home</a>
+				</li>
+				<li class="<% if (locals.activePage && activePage == "Portfolio") { %> highlight <% } %>">
+					<a href="/portfolio" class="">Portfolio</a>
+				</li>
+				<li class="<% if (locals.activePage && activePage == "AboutMe") { %> highlight <% } %>">
+					<a href="/aboutme" class="">About Me</a>
+				</li>
 			</ul>
 		</nav>
 	</div>

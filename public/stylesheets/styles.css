@@ -4,31 +4,111 @@
 
 /* Globals */
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .container {
 	width: 80%;
 	margin: auto;
 	overflow: hidden;
+	text-align: center;
 }
 
 /* Fonts */
 body {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
 }
 
 body p {
 	font-family: 'Gentium Basic', serif;
 }
 
+.highlight {
+	color: #b23000 !important;
+}
 
 /* Header */
+header .navbar-brand {
+	display: inline;
+	float: left;
+
+	min-height: 70px;
+
+	font-size: 40px;
+	font-weight: bold;
+}
+
+header {
+	color: white;
+	background-color: #2F4F4F; 
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+header nav {
+	display: inline;
+	float: right;
+
+	padding-top: 20px;
+}
+
+header nav li {
+	display: inline;
+	margin: 0 10px 0 10px;
+}
+
+header nav li a {
+	color: inherit;
+	text-decoration: none;
+}
+
+header nav li a:visted {
+	color: inherit;
+}
+
+/* Main */
 
 
 
-/* Body */
+/* Specific for creation of polls */
+form {
+	font-family: 'Gentium Basic', serif;
+}
 
+#pollQuestion {
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 20px;
+	padding: 5px;
+	padding-right: 10px;
+}
 
+#pollSubmit {
+	display: block;
+	margin: 5px auto;
+	padding: 5px 75px;
+}
+
+.pollOption {
+	display: block;
+	margin: 5px auto;
+	padding: 5px;
+	padding-right: 10px;
+}
+
+select {
+	display: block;
+	padding: 5px 10px;
+	margin: 10px auto;
+	margin-top: 20px;
+}
 
 /* Footer */
 footer {
 	text-align: center;
+	height: 50px;
+	width: 100%;
 }
