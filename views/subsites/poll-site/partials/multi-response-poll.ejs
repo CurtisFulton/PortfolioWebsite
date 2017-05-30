@@ -1,0 +1,8 @@
+
+<form action="/<%= submitURL %>" method="post">
+	<% poll.pollOptions.forEach(function(option) { %>
+		<input type="checkbox" name="pollAnswers" value="<%= option %>"> <%= option %> <br>
+	<% }); %>
+
+  	<input type="submit" name="Submit">
+</form>

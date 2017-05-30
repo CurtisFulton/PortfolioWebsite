@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<% include ../../partials/head.ejs %>
+  	<% include ../../partials/scripts.ejs %>
+
+  </head>
+  <body>
+  	<% include ../../partials/header.ejs %>
+
+  	<main>
+  		<div class="container">
+
+        <ul>
+          <% polls.forEach(function(poll) { %>
+            <li><a href='<%= poll._id %>'><%= poll._id %></a>:    <%= poll.question %></li>
+          <% }); %>
+        </ul>
+  		</div>
+  	<main>
+
+  	<% include ../../partials/footer.ejs %>
+  </body>
+
+</html>

@@ -67,7 +67,12 @@ router.post('/api/create-poll', function(req, res, next) {
 
 router.get('/polls', function(req, res, next) { 
 	db.polls.find(function(err, docs) {
-		res.json(docs);
+		//res.json(docs);
+		res.render(routeViews + 'poll-list', {
+			title : "Survey - Portfolio",
+			activePage : "Portfolio",
+			polls: docs,
+		});
 	});
 });
 
@@ -122,7 +127,6 @@ router.post('/api/:id/submit', function(req, res, next) {
 		if (err)
 			console.log(err);
 
-		console.log('Successfully inserted result');
 		var redirectURL = '/' + homeSiteURL + id + "/results";
 		res.redirect(redirectURL);
 	});
@@ -133,6 +137,7 @@ router.get('/:id/results', function(req, res, next) {
 	var pollID = req.params.id;
 	db.results.aggregate([
 		{ $match: {pollID:pollID} }, 
+		{ $unwind: "$answers" }, 
 		{ $group: { _id: "$answers", count: {$sum:1} } }
 	], function(err, result) {
 		if (err)
