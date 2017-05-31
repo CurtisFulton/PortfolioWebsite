@@ -1,0 +1,22 @@
+/********************************************************************/
+/*			Styles that are specific to the portfolio page 		    */
+/********************************************************************/
+
+main .portfolio-item {
+	border-style: groove;
+	border-width: 2px 4px 4px 1px;
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+main li {
+	display: inline;
+
+	margin-right: 30px;
+}
+
+main p {
+	display: inline;
+}

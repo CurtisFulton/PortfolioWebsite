@@ -66,27 +66,27 @@ app.use(expressValidator({
 	}
 }))
 
-// Routes
-const home = require('./routes/home');
-const portfolio = require('./routes/portfolio');
-const aboutme = require('./routes/aboutme');
+// Main Controllers
+const home = require('./controllers/main/home');
+const portfolio = require('./controllers/main/portfolio');
+const aboutme = require('./controllers/main/aboutme');
 
 app.use('/', home);
 app.use('/portfolio', portfolio);
 app.use('/aboutme', aboutme);
 
-// Error Handling
 
-// 500
+// 500 Error
 app.use(function(err, req, res, next) {
 	res.status(500).send("500: Internal Server Error");
 	console.log(err);
 });
 
-// 404
+// 500 Error
 app.use(function(req, res) {
 	res.status(404).send("404: Page not found");
 });
+
 
 // Start Server
 app.listen(port, function() {

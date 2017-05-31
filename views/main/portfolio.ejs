@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
   	<% include ../partials/head.ejs %>
-  	<% include ../partials/scripts.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/page-specific/portfolio.css">
 
+  	<% include ../partials/scripts.ejs %>
   </head>
   <body>
   	<% include ../partials/header.ejs %>
@@ -14,14 +15,19 @@
           <div id="title">
             <h1>Portfolio</h1>
           </div>
+          <br>
 
           <ul>
-            <li><a href="/portfolio/poll">Poll</a></li>
+            <% portfolios.forEach(function(portfolioInfo) { %>
+              <div class="portfolio-item">
+                <li><a href="/portfolio<%= portfolioInfo.localURL %>"><%= portfolioInfo.name %>:</a></li>
+                <p><%= portfolioInfo.description %></p>
+              </div>
+            <% }); %>
           </ul>
       </div>
 
   	</main>
-
 
   	<% include ../partials/footer.ejs %>
   </body>

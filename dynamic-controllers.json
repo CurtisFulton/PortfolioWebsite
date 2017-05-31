@@ -1,0 +1,10 @@
+[ 
+	{
+		"localPath": "poll/",
+		"entryFile": "home.js",
+		"localURL": "/poll",
+
+		"name": "Poll Site",
+		"description": "A polling site made using Node.js, Express.js, MongoDB. This was created as a clone of Strawpoll.me"
+	}
+]

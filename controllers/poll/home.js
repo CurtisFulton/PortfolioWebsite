@@ -7,13 +7,14 @@ const db = mongojs('poll', ['polls', 'results']);
 const homeSiteURL = "portfolio/poll/";
 
 // Helpers to find the views
-const routeViews = "subsites/poll-site/";
-const homeView = routeViews + "home";
-const pollView = routeViews + "poll";
+const homeView = "poll/home.ejs";
+const pollView = "poll/poll.ejs";
+const resultsView = "poll/results.ejs";
+const pollListView = "poll/poll-list.ejs";
 
 // Default portfolio page
 router.get('/', function(req, res, next) {
-	res.render(routeViews + 'home', {
+	res.render(homeView, {
 		title : "Poll - Portfolio",
 		portfolioHome : homeSiteURL
 	});
@@ -33,7 +34,7 @@ router.post('/api/create-poll', function(req, res, next) {
 	var errors = req.validationErrors();
 
 	if (errors){
-		res.render(routeViews + 'home', {
+		res.render(homeview, {
 			title : "Survey - Portfolio",
 			portfolioHome : homeSiteURL,
 			errors: errors
@@ -72,7 +73,7 @@ router.post('/api/create-poll', function(req, res, next) {
 router.get('/polls', function(req, res, next) { 
 	db.polls.find(function(err, docs) {
 		//res.json(docs);
-		res.render(routeViews + 'poll-list', {
+		res.render(pollListView, {
 			title : "Survey - Portfolio",
 			polls: docs,
 		});
@@ -108,7 +109,7 @@ router.get('/:id', function(req, res, next) {
 				check = "IP Checking";
 
 			var id = req.params.id;
-			res.render(routeViews + 'poll', {
+			res.render(pollView, {
 				title : "Survey - Portfolio",
 				pollID: id,
 				submitURL : homeSiteURL + "api/" + id + "/submit",
@@ -192,7 +193,7 @@ router.get('/:id/results', function(req, res, next) {
 		if (err)
 			console.log(err);
 
-		res.render(routeViews + 'results', {
+		res.render(resultsView, {
 			title : "Survey - Portfolio",
 			pollID : pollID,
 			results : result
