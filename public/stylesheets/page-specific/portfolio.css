@@ -3,20 +3,47 @@
 /********************************************************************/
 
 main .portfolio-item {
-	border-style: groove;
-	border-width: 2px 4px 4px 1px;
+	border-style: ridge;
+	border-width: 2px 2px 2px 2px;
 
-	padding-top: 20px;
-	padding-bottom: 20px;
-
+	display: flex;
+	align-items: center;
+	background-color: #f3f3f3;
+	color:black;
 }
 
-main li {
-	display: inline;
-
-	margin-right: 30px;
+main .portfolio-item:hover {
+	background-color: white;
 }
 
-main p {
-	display: inline;
+main .portfolio-name {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	flex: 1;
+}
+
+main .portfolio-name p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+main .portfolio-description {
+	font-family: 'Gentium Basic', serif;
+	box-sizing: content-box;
+	margin-left: 3em;
+
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+
+	flex: 4;
+}
+
+main a {
+	text-decoration: none;
+	font-size: 1.25em;
+	color: inherit;
+}
+
+main a:vistied {
+	color: inherit;
 }

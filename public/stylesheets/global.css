@@ -2,113 +2,142 @@
 /*			Styles that are generic across the whole site 		   */
 /*******************************************************************/
 
-/* Globals */
-
-* {
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-.container {
-	width: 80%;
-	margin: auto;
-	overflow: hidden;
-	text-align: center;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 
-/* Fonts */
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+	line-height: 1;
 }
 
-body p {
-	font-family: 'Gentium Basic', serif;
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Globals */
+
+body, html {
+	height: 100%;
 }
 
 .highlight {
 	color: #b23000 !important;
 }
 
-/* Header */
-header .navbar-brand {
-	display: inline;
-	float: left;
-
-	min-height: 70px;
-
-	font-size: 40px;
-	font-weight: bold;
+/* Fonts */
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
 }
 
+/* Header */
 header {
 	color: white;
-	background-color: #2F4F4F; 
-	margin-bottom: 20px;
-	width: 100%;
+	font-size: 1rem;
+
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index: 100;
 }
 
-header nav {
-	display: inline;
-	float: right;
-
-	padding-top: 20px;
+nav ul {
+	background-color: #0f0f0f; 
+	text-align: center;
+	align-items: center;
+	border-bottom: 2px outset;
+	height: 3rem;
 }
 
-header nav li {
-	display: inline;
-	margin: 0 10px 0 10px;
+nav li {
+	text-transform: uppercase;
+	display: inline-block;
+	margin-right: 1em;
+	font-size: 1.1em;
+
+	padding-top: 0.9em;
+	padding-bottom: 0.4em;
 }
 
-header nav li a {
+nav li a {
+	display: inline-block;
 	color: inherit;
 	text-decoration: none;
 }
 
-header nav li a:visted {
+nav li a:visited {
 	color: inherit;
+	text-decoration: inherit;
 }
 
-/* Main */
-
-
-
-/* Specific for creation of polls */
-form {
-	font-family: 'Gentium Basic', serif;
+nav li:hover {
+	animation: fadeinborder 0.4s ease-in-out forwards; 
 }
 
-#pollQuestion {
-	display: block;
-	margin: 0px auto;
-	margin-bottom: 20px;
-	padding: 5px;
-	padding-right: 10px;
+nav li#active {
+	animation: fadetoactive 0.2s ease-in forwards; 
 }
 
-#pollSubmit {
-	display: block;
-	margin: 5px auto;
-	padding: 5px 75px;
+@keyframes fadeinborder {
+	from { border-bottom: 1px solid #0f0f0f; }
+	to { border-bottom: 1px solid #b23000; }
 }
 
-.pollOption {
-	display: block;
-	margin: 5px auto;
-	padding: 5px;
-	padding-right: 10px;
-}
-
-select {
-	display: block;
-	padding: 5px 10px;
-	margin: 10px auto;
-	margin-top: 20px;
+@keyframes fadetoactive {
+	from { 
+		color: white; 
+		border-bottom: 1px solid #0f0f0f;
+	}
+	to { 
+		color: #b23000; 
+		border-bottom: 1px solid #b23000;
+	}
 }
 
 /* Footer */
 footer {
 	text-align: center;
-	height: 50px;
+	height: 2.5em;
 	width: 100%;
+	color: white;
+	background-color: #0f0f0f;
 }

@@ -1,0 +1,74 @@
+/********************************************************************/
+/*			Styles that are specific to the portfolio page 		    */
+/********************************************************************/
+
+main #pollForm {
+	font-family: 'Gentium Basic', serif;
+
+	margin-top: 50px;
+	display: inline-block;
+
+	width: 500px;
+	background-color: white;
+}
+
+main input {
+	padding-left: 30px;
+	box-sizing: border-box;
+}
+
+main #pollQuestion {
+	display: block;
+
+	padding-top: 5px;
+	padding-bottom: 10px;
+
+	border-width: 0;
+
+	height: 60px;
+	width: 100%;
+}
+
+main .pollOption {
+	display: block;
+
+	border-style: solid;
+	border-width: 1px 0px 1px 0px;
+
+	margin: 0;
+	margin-top: -1px;
+
+	padding: 5px 0 5px inherit;
+	width: 100%;
+	height:40px;
+	border-radius: 0;
+}
+
+main .pollOption:focus {
+	outline: none;
+}
+
+main select {
+	display: block;
+	padding: 5px 10px;
+	margin: 10px auto;
+	margin-top: 20px;
+}
+
+main label {
+	font-size: 18px;
+}
+
+main #pollSubmit {
+	display: block;
+	margin: 5px auto;
+	padding: 5px 70px;
+}
+
+/* Make the poll fit to the screen width if 
+	it is smaller than the set width */
+@media (max-width: 500px) {
+	main #pollForm {
+		width: 100%;
+	}
+}

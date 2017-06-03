@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
   	<% include ../partials/head.ejs %>
-  	<% include ../partials/scripts.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/page-specific/poll-home.css">
 
+
+  	<% include ../partials/scripts.ejs %>
     <script src="/javascripts/poll/create-poll.js" async defer></script>
   </head>
   <body>
@@ -20,7 +22,7 @@
 
   		<div class="container">
 
-  			<form id="pollForm" action="/<%= portfolioHome %>/api/create-poll" method="post">
+  			<form id="pollForm" action="/<%= portfolioHome %>api/create-poll" method="post">
   				<input id=pollQuestion type="text" name="pollquestion" placeholder="Enter the question" autocomplete="off">
 
           <div id=pollOptions>

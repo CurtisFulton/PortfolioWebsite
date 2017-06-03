@@ -11,7 +11,6 @@
 
   	<main>
   		<div class="container">
-
         <h1> Poll ID: <%= poll._id %> </h1>
         <h2> Poll Question: <%= poll.question %> </h2>
         <% if (poll.multiSelect) { %>
@@ -24,7 +23,6 @@
         <br>
         <a href='<%= pollID %>/results'>results</a>
   		</div>
-
   	</main>
 
   	<% include ../partials/footer.ejs %>
