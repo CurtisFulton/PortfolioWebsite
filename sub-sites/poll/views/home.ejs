@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/head.ejs %>
+
+    <% include ./partials/scripts.ejs %>
+    <script src="/javascripts/create-poll.js" async defer></script>
+  </head>
+  <body>
+  	<main>
+      <% if(errors) { %>
+          <ul>
+            <% errors.forEach(function(error){ %>
+              <li> <%= error.msg %> </li>
+            <% }); %>
+          </ul>
+      <% } %>
+
+  		<div class="container">
+
+  			<form id="pollForm" action="/api/create-poll" method="post">
+  				<input id=pollQuestion type="text" name="pollquestion" placeholder="Enter the question" autocomplete="off">
+
+          <div id=pollOptions>
+            <input class="pollOption" type="text" name="polloption" placeholder="Enter a poll option" autocomplete="off">
+            <input class="pollOption" type="text" name="polloption" placeholder="Enter a poll option" autocomplete="off">
+            <input class="pollOption" type="text" name="polloption" placeholder="Enter a poll option" autocomplete="off">
+          </div>
+
+          <select name="duplicationCheck" required>
+            <option value="IPCheck" selected>IP Duplication Checking</option>
+            <option value="None">No Duplication Checking</option>
+          </select>
+
+          <input type="checkbox" name="multiSelect">
+          <label>Allow multi selection</label>
+
+          <br> <br>
+  				<input id="pollSubmit" type="submit" name="Submit">
+  			</form>
+
+        <br>
+        <a href="polls">All polls</a>
+  		</div>
+
+  	</main>
+  </body>
+
+</html>

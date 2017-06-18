@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<% include ./partials/head.ejs %>
+  	<% include ./partials/scripts.ejs %>
+
+    <script src="/javascripts/poll/submit-poll.js" async defer></script>
+  </head>
+  <body>
+
+  	<main>
+  		<div class="container">
+        <h1> Poll ID: <%= poll._id %> </h1>
+        <h2> Poll Question: <%= poll.question %> </h2>
+        <% if (poll.multiSelect) { %>
+          <% include partials/multi-response-poll.ejs %>
+        <% } else { %>
+          <% include partials/single-response-poll.ejs %>
+        <% } %>
+        <br>
+        <h4>Duplication Checking: <%= duplicationCheck %></h4>
+        <br>
+        <a href='<%= pollID %>/results'>results</a>
+  		</div>
+  	</main>
+
+  </body>
+
+  
+
+</html>

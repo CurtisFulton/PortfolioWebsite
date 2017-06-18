@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<% include ./partials/head.ejs %>
+  	<% include ./partials/scripts.ejs %>
+
+  </head>
+  <body>
+
+  	<main>
+  		<div class="container">
+
+        <h1> Poll ID: <%= pollID %> </h1>
+
+        <ul>
+          <% results.forEach(function(result) { %>
+            <li><%= result._id %>: <%= result.count %></li>
+          <% }); %>
+        </ul>
+  		</div>
+  	</main>
+
+  </body>
+
+</html>

@@ -5,7 +5,7 @@ const path = require('path');
 // Create all the custom routes found in the subroute directory
 const modules = require('../dynamic-controllers.json');
 
-loadModules(modules);
+//loadModules(modules);
 
 // Default portfolio page
 router.get('/', function(req, res, next) {

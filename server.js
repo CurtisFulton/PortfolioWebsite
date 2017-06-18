@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const validator = require('validator');
 
+const vhost = require('vhost');
+
 const port = 8080;
 const app = express();
 
@@ -12,8 +14,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-// Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
+loadExpressValidator();
 
 // Body Parser 
 app.use(bodyParser.json());
@@ -26,14 +27,18 @@ app.use(function(req, res, next) {
 });
 
 
-
 // Main Controllers
 const home = require('./routes/home');
 const portfolio = require('./routes/portfolio');
 
+app.use(vhost('Poll.curtisfulton.me', require('./sub-sites/poll').app));
+app.use(vhost('NorthForce.curtisfulton.me', require('../NorthForceLandscaping').app));
+
+// Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/', home);
 app.use('/portfolio', portfolio);
-
 
 // 500 Error
 app.use(function(err, req, res, next) {
@@ -52,7 +57,7 @@ app.listen(port, function() {
 });
 
 
-function loadMiddleware() {
+function loadExpressValidator() {
 	// Express Validator
 	app.use(expressValidator({
 	  errorFormatter: function(param, msg, value) {

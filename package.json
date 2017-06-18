@@ -17,7 +17,8 @@
     "ejs": "*",
     "express": "*",
     "express-validator": "^3.2.0",
-    "mongojs": "*"
+    "mongojs": "*",
+    "vhost": "^3.0.2"
   },
   "bugs": {
     "url": "https://github.com/CurtisFulton/PortfolioWebsite/issues"
