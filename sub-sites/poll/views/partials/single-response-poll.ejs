@@ -1,8 +1,0 @@
-
-<form action="/<%= submitURL %>" method="post">
-	<% poll.pollOptions.forEach(function(option) { %>
-		<input class="pollAnswer" type="radio" name="pollAnswers" value="<%= option %>"> <%= option %> <br>
-	<% }); %>
-	<br>
-  	<input id="submitPoll" type="submit" name="Submit">
-</form>

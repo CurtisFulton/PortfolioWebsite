@@ -13,12 +13,8 @@
   "author": "Curtis Fulton",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "*",
-    "ejs": "*",
     "express": "*",
-    "express-validator": "^3.2.0",
-    "mongojs": "*",
-    "vhost": "^3.0.2"
+    "vhost": "*"
   },
   "bugs": {
     "url": "https://github.com/CurtisFulton/PortfolioWebsite/issues"
