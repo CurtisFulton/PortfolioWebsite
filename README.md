@@ -1,7 +1,6 @@
 # PortfolioWebsite
 
-This project is the source code for my portfolio website built using Node.js
+This is the main host of the portfolio website. 
+All sub domains are hosted from here has vhosts
 
-Light-grey = #d3d3d3
-Orange = #b23000
-Navy-ish = #2F4F4F
+This repository will not have any logic other than creating the vhosts.
