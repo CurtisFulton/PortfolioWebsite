@@ -1,12 +1,16 @@
 const express = require('express');
 const vhost = require('vhost');
 
-const port = 8080;
+const port = 80;
 const app = express();
 
-app.use(vhost('Www.curtisfulton.me', require('../WebProjects/www').app));
-app.use(vhost('Poll.curtisfulton.me', require('../WebProjects/poll').app));
-app.use(vhost('NorthForce.curtisfulton.me', require('../WebProjects/northforce').app));
+
+//
+//app.use(vhost('localhost', require('../Web Projects/vue-portfolio/server.js').app));
+
+app.use(vhost('Www.CurtisFulton.me', require('../WebProjects/vue-portfolio/server.js').app));
+app.use(vhost('Poll.CurtisFulton.me', require('../WebProjects/poll/index.js').app));
+app.use(require('../WebProjects/vue-portfolio/server.js').app);
 
 // 500 Error
 app.use(function(err, req, res, next) {
